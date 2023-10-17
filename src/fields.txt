@@ -1,0 +1,25 @@
+
+
+Keeping:
+Basics (Not Impacting ML Model):
+Name, Age (impacting), Occupation, Education, Email
+
+Age
+Annual_Income
+Num_Bank_Accounts
+Num_Credit_Card
+Interest_Rate
+Num_of_Loan
+Total_EMI_per_month
+Amount_invested_monthly
+Payment_Behaviour
+Monthly_Balance
+Outstanding_Debt
+Credit_Mix
+
+Maybe Keeping: 
+Occupation 
+Monthly_Inhand_Salary
+Num_of_Delayed_Payment
+Changed_Credit_Limit
+Occupation 
