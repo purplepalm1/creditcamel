@@ -1,15 +1,17 @@
-import logo from './logo.png';
+
+import { LandingPage } from './pages/landingPage';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          CreditCamel: Where your Credit Journey Begins.
-        </p>
-      </header>
+    <div>
+      <Router>
+        <Routes>
+          <Route path="/home" element={<LandingPage />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
