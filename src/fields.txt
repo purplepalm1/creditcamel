@@ -23,3 +23,7 @@ Monthly_Inhand_Salary
 Num_of_Delayed_Payment
 Changed_Credit_Limit
 Occupation 
+
+
+mysql:
+root // root1123

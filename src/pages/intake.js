@@ -5,6 +5,7 @@ import '../index.css'
 import React from 'react';
 import { Link } from 'react-router-dom';
 import HorizontalLinearStepper from '../components/linearStepper';
+import CorporateCreateItem from '../components/intakeform';
 
 export const Intake = () => {
     return (
@@ -15,12 +16,11 @@ export const Intake = () => {
                         The revolutionary fintech tool to estimate your credit score.</h1>
                 </div>
                 <div className='stepper'>
-                    <HorizontalLinearStepper />
+                    <CorporateCreateItem />
                 </div>
             </header>
         </div>
 
     );
-
 
 }
