@@ -1,5 +1,5 @@
 
-import { TextField, Typography, Grid, Card, CardHeader, CardContent, Container, Button } from "@mui/material";
+import { TextField, Grid, Card, CardHeader, CardContent, Container, Button } from "@mui/material";
 import { useState } from "react";
 
 export default function BasicInfo() {
