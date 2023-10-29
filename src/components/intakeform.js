@@ -2,7 +2,7 @@
 import { TextField, Typography, Grid, Card, CardHeader, CardContent, Container, Button } from "@mui/material";
 import { useState } from "react";
 
-export default function CorporateCreateItem() {
+export default function BasicInfo() {
     const [firstname, setFirstName] = useState("");
     const [lastname, setLastName] = useState("");
     const [age, setAge] = useState("");
