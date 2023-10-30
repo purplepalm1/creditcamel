@@ -25,6 +25,11 @@ Changed_Credit_Limit
 Occupation 
 
 
-mysql:
-root // root1123
-    // credit1123
+Workbench details:
+host: localhost
+database name: creditcamel
+user name: root
+password: Purpleroot1123
+
+to connect to db:
+open cmd and copy/paste src path , then execute "node server.js"
