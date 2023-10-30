@@ -1,6 +1,7 @@
 
 import { TextField, Grid, Card, CardHeader, CardContent, Container, Button } from "@mui/material";
 import { useState } from "react";
+import axios from "axios";
 
 export default function BasicInfo() {
     const [firstname, setFirstName] = useState("");
@@ -11,7 +12,21 @@ export default function BasicInfo() {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        // Add form submission logic here
+        axios.post('http://localhost:5000/submit-form', {
+            firstname,
+            lastname,
+            age,
+            occupation,
+            email
+        })
+            .then((response) => {
+                console.log(response.data);
+                // Handle success, e.g., show a success message to the user
+            })
+            .catch((error) => {
+                console.error(error);
+                // Handle error, e.g., show an error message to the user
+            });
     };
 
     return (

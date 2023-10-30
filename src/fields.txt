@@ -27,3 +27,4 @@ Occupation
 
 mysql:
 root // root1123
+    // credit1123
