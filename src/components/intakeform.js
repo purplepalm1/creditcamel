@@ -23,6 +23,10 @@ export default function BasicInfo() {
     const [numbankaccounts, setBankAccounts] = useState("");
     const [numcreditcards, setCreditCards] = useState("");
     const [numloans, setLoans] = useState("");
+    const [intrate, setInterestRate] = useState("");
+    const [emi, setEMI] = useState("");
+    const [outstandingdebt, setOutstandingDebt] = useState("");
+    const [monthlybal, setMonthlyBal] = useState("");
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
@@ -37,6 +41,10 @@ export default function BasicInfo() {
             numbankaccounts,
             numcreditcards,
             numloans,
+            intrate,
+            emi,
+            outstandingdebt,
+            monthlybal,
         })
             .then((response) => {
                 console.log(response.data);
@@ -155,6 +163,55 @@ export default function BasicInfo() {
                                     onChange={(e) => setLoans(e.target.value)}
                                     value={numloans}
                                     label="Number of Loans"
+                                    variant="outlined"
+                                    color="secondary"
+                                    fullWidth
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <div style={{ marginTop: '20px' }}>
+                                    <Typography variant="h6" color="textSecondary" align="center">
+                                        Loan Information
+                                    </Typography>
+                                </div>
+                            </Grid>
+                            {/* Third Form Fields */}
+                            <Grid item xs={12} md={6}>
+                                <TextField
+                                    onChange={(e) => setInterestRate(e.target.value)}
+                                    value={intrate}
+                                    label="Interest Rate on Credit Card"
+                                    variant="outlined"
+                                    color="secondary"
+                                    required
+                                    fullWidth
+                                />
+                            </Grid>
+                            <Grid item xs={12} md={6}>
+                                <TextField
+                                    onChange={(e) => setEMI(e.target.value)}
+                                    value={emi}
+                                    label="Monthly Debt Payment"
+                                    variant="outlined"
+                                    color="secondary"
+                                    fullWidth
+                                />
+                            </Grid>
+                            <Grid item xs={12} md={6}>
+                                <TextField
+                                    onChange={(e) => setOutstandingDebt(e.target.value)}
+                                    value={outstandingdebt}
+                                    label="Total Outstanding Debt"
+                                    variant="outlined"
+                                    color="secondary"
+                                    fullWidth
+                                />
+                            </Grid>
+                            <Grid item xs={12} md={6}>
+                                <TextField
+                                    onChange={(e) => setMonthlyBal(e.target.value)}
+                                    value={monthlybal}
+                                    label="Monthly Loan Balance"
                                     variant="outlined"
                                     color="secondary"
                                     fullWidth

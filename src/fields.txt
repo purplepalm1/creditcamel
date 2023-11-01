@@ -5,17 +5,23 @@ Basics (Not Impacting ML Model):
 Name, Age (impacting), Occupation, Education, Email
 
 Age
-Annual_Income
-Num_Bank_Accounts
-Num_Credit_Card
-Interest_Rate
-Num_of_Loan
-Total_EMI_per_month
-Amount_invested_monthly
-Payment_Behaviour
+Annual_Income DONE
+Num_Bank_Accounts DONE
+Num_Credit_Card DONE
+Interest_Rate - interest rate on credit card DONE
+Num_of_Loan DONE 
+
+Total_EMI_per_month - how much you pay down loans a month (total loan payment) DONE 
+
+Outstanding_Debt - outstanding debt to be paid DONE
+
+Amount_invested_monthly - monthly amount invested
 Monthly_Balance
-Outstanding_Debt
-Credit_Mix
+
+
+non user inputs
+Payment_Behaviour
+Credit_Mix - represents score - good standard bad
 
 Maybe Keeping: 
 Occupation 

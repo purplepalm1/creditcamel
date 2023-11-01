@@ -32,12 +32,16 @@ app.post('/submit-form', (req, res) => {
         annualincome,
         numbankaccounts,
         numcreditcards,
-        numloans
+        numloans,
+        intrate,
+        emi,
+        outstandingdebt,
+        monthlybal,
     } = req.body;
 
-    const sql = 'INSERT INTO user_info (firstname, lastname, age, occupation, email, annualincome, Num_Bank_Accounts, Num_Credit_Card, Num_of_Loan) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
+    const sql = 'INSERT INTO user_info (firstname, lastname, age, occupation, email, annualincome, Num_Bank_Accounts, Num_Credit_Card, Num_of_Loan, Interest_Rate, Total_EMI_per_month, Outstanding_Debt, Monthly_Balance) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
 
-    db.query(sql, [firstname, lastname, age, occupation, email, annualincome, numbankaccounts, numcreditcards, numloans], (err, result) => {
+    db.query(sql, [firstname, lastname, age, occupation, email, annualincome, numbankaccounts, numcreditcards, numloans, intrate, emi, outstandingdebt, monthlybal], (err, result) => {
         if (err) {
             console.error(err);
             res.status(500).send('Internal Server Error');
