@@ -1,6 +1,16 @@
 
-import { TextField, Grid, Card, CardHeader, CardContent, Container, Button } from "@mui/material";
-import { useState } from "react";
+
+import React, { useState } from "react";
+import {
+    TextField,
+    Typography,
+    Grid,
+    Card,
+    CardHeader,
+    CardContent,
+    Container,
+    Button,
+} from "@mui/material";
 import axios from "axios";
 
 export default function BasicInfo() {
@@ -9,36 +19,44 @@ export default function BasicInfo() {
     const [age, setAge] = useState("");
     const [occupation, setOccupation] = useState("");
     const [email, setEmail] = useState("");
+    const [annualincome, setAnnualIncome] = useState("");
+    const [numbankaccounts, setBankAccounts] = useState("");
+    const [numcreditcards, setCreditCards] = useState("");
+    const [numloans, setLoans] = useState("");
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:5000/submit-form', {
+        // Send data from the form to the server
+        axios.post("http://localhost:5000/submit-form", {
             firstname,
             lastname,
             age,
             occupation,
-            email
+            email,
+            annualincome,
+            numbankaccounts,
+            numcreditcards,
+            numloans,
         })
             .then((response) => {
                 console.log(response.data);
-                // Handle success, e.g., show a success message to the user
             })
             .catch((error) => {
                 console.error(error);
-                // Handle error, e.g., show an error message to the user
             });
     };
 
     return (
-        <Container maxWidth="md" style={{ marginTop: '50px' }}>
+        <Container maxWidth="md" style={{ marginTop: "50px" }}>
             <Card raised>
                 <CardHeader
                     title="Basic Information"
-                    titleTypographyProps={{ variant: 'h4', align: 'center' }}
+                    titleTypographyProps={{ variant: "h5", align: "center" }}
                 />
                 <CardContent>
                     <form onSubmit={handleFormSubmit}>
                         <Grid container spacing={2}>
+                            {/* First Form Fields */}
                             <Grid item xs={12} md={6}>
                                 <TextField
                                     onChange={(e) => setFirstName(e.target.value)}
@@ -94,10 +112,61 @@ export default function BasicInfo() {
                                 />
                             </Grid>
                             <Grid item xs={12}>
+                                <div style={{ marginTop: '20px' }}>
+                                    <Typography variant="h6" color="textSecondary" align="center">
+                                        Financial Information
+                                    </Typography>
+                                </div>
+                            </Grid>
+                            {/* Second Form Fields */}
+                            <Grid item xs={12} md={6}>
+                                <TextField
+                                    onChange={(e) => setAnnualIncome(e.target.value)}
+                                    value={annualincome}
+                                    label="Annual Income"
+                                    variant="outlined"
+                                    color="secondary"
+                                    required
+                                    fullWidth
+                                />
+                            </Grid>
+                            <Grid item xs={12} md={6}>
+                                <TextField
+                                    onChange={(e) => setBankAccounts(e.target.value)}
+                                    value={numbankaccounts}
+                                    label="Number of Bank Accounts"
+                                    variant="outlined"
+                                    color="secondary"
+                                    fullWidth
+                                />
+                            </Grid>
+                            <Grid item xs={12} md={6}>
+                                <TextField
+                                    onChange={(e) => setCreditCards(e.target.value)}
+                                    value={numcreditcards}
+                                    label="Number of Credit Cards"
+                                    variant="outlined"
+                                    color="secondary"
+                                    fullWidth
+                                />
+                            </Grid>
+                            <Grid item xs={12} md={6}>
+                                <TextField
+                                    onChange={(e) => setLoans(e.target.value)}
+                                    value={numloans}
+                                    label="Number of Loans"
+                                    variant="outlined"
+                                    color="secondary"
+                                    fullWidth
+                                />
+                            </Grid>
+
+                            {/* Submit Button */}
+                            <Grid item xs={12}>
                                 <Button
                                     type="submit"
                                     variant="contained"
-                                    style={{ backgroundColor: '#FFA96A', color: 'black' }}
+                                    style={{ backgroundColor: "#FFA96A", color: "black" }}
                                     fullWidth
                                 >
                                     SUBMIT
